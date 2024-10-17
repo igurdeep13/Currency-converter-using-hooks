@@ -15,6 +15,7 @@ function useCurrencyInfo(currency){
             
         fetchCurrencyData()
     },[currency]);
+    console.log(data)
     return data;
 }
 
