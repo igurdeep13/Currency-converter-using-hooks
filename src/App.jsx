@@ -3,12 +3,12 @@ import { InputBox } from "./components";
 import useCurrencyInfo from "./hooks/useCurrencyInfo";
 
 function App() {
-  const [amount, setAmount] = useState(null);
+  const [amount, setAmount] = useState("");
   const [from, setFrom] = useState("usd");
   const [to, setTo] = useState("inr");
-  const [convertedAmount, setConvertedAmount] = useState(null);
+  const [convertedAmount, setConvertedAmount] = useState("");
   const currencyInfo = useCurrencyInfo(from);
-  const options = Object.keys(currencyInfo);
+  const options = currencyInfo ? Object.keys(currencyInfo) : []; // Ensure options is an empty array if currencyInfo is null
 
   const swap = () => {
     setFrom(to);
